@@ -2,12 +2,10 @@
 os: osx
 osx_image: xcode9
 
-language: python
-python: "2.7"
-
 before_install:
 
 install:
+  - brew install python
   - brew install ansible
   
 script:
