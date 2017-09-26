@@ -8,7 +8,7 @@ python: "2.7"
 before_install:
 
 install:
-  - pip install ansible
+  - brew install ansible
   
 script:
   - ansible-playbook ./setup.yml
