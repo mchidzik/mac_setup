@@ -12,13 +12,13 @@
       homebrew_tap: name={{ item.name }} state={{ item.state }}
       with_items: "{{ homebrew_taps }}"
 
-    - name: Homebrew installs
-      homebrew: name={{ item.name }} state={{ item.state }}
-      with_items: "{{ homebrew_packages }}"
-
     - name: Homebrew cask installs
       homebrew_cask: name={{ item.name }} state={{ item.state }}
       with_items: "{{ homebrew_casks }}"
+
+    - name: Homebrew installs
+      homebrew: name={{ item.name }} state={{ item.state }}
+      with_items: "{{ homebrew_packages }}"
 
     - name: Install Ruby gems
       gem: name={{ item.name }} version={{ item.version }} state={{ item.state }}
