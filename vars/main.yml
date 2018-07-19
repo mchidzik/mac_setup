@@ -27,6 +27,7 @@ homebrew_packages:
   - { name: 'kotlin', state: 'present', install_options: '' }  # jvm language
   - { name: 'lua', state: 'present',  install_options: '' }  # lua language
   - { name: 'mariadb', state: 'present', install_options: '' }  # After install, setup: 'mysql_install_db'; start: 'mysql.server start'
+  - { name: 'maven', state: 'present', install_options: '' }
   - { name: 'node', state: 'present', install_options: '' }  # https://nodejs.org/en/
   - { name: 'openssl', state: 'present', install_options: '' }
   - { name: 'packer', state: 'present', install_options: '' }  # https://www.packer.io/
@@ -42,6 +43,7 @@ homebrew_packages:
   - { name: 'wget', state: 'present', install_options: '' }
   - { name: 'xmlstarlet', state: 'present', install_options: '' }
   - { name: 'yarn', state: 'present', install_options: ' --without-node' }
+  - { name: 'yq', state: 'present', install_options: '' }  # command-line YAML processor
   - { name: 'yeti', state: 'absent', install_options: '' }  # Functional language for the JVM
 
   #
@@ -50,7 +52,7 @@ homebrew_packages:
   - { name: 'openshift-cli', state: 'present', install_options: '' }  # for use with kubernetes
 
 homebrew_taps:
-  - { name: 'caskroom/versions', state: 'present' }     
+  - { name: 'homebrew/cask-versions', state: 'present' }     
   - { name: 'cloudfoundry/tap', state: 'present' }
   - { name: 'homebrew/homebrew-php', state: 'present' }
   - { name: 'homebrew/science', state: 'present' }   # for R language
@@ -59,17 +61,18 @@ homebrew_taps:
 
 homebrew_casks:
   - { name: 'atom', state: 'present' }
+  - { name: 'brackets', state: 'present' }   # Open source text editor, http://brackets.io/
   - { name: 'dash', state: 'present' }
   - { name: 'dropbox', state: 'present' }
   - { name: 'eclipse-java', state: 'present' }
   - { name: 'firefox', state: 'present' }
   - { name: 'github', state: 'absent' }  # github desktop
   - { name: 'google-chrome', state: 'present' }
-  - { name: 'intellij-idea-ce', state: 'present' }
+  - { name: 'intellij-idea-ce', state: 'absent' }
   - { name: 'iterm2', state: 'present' }
   - { name: 'java', state: 'present' }
-  - { name: 'java6', state: 'present' }
-  - { name: 'java9', state: 'absent' }
+  #- { name: 'java6', state: 'present' }
+  #- { name: 'java9', state: 'absent' }
   - { name: 'kindle', state: 'present' }
   - { name: 'kitematic', state: 'present' }  # Used with docker
   - { name: 'minikube', state: 'present' }  # Tool that makes it easy to run Kubernetes locally
