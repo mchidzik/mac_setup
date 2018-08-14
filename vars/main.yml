@@ -23,6 +23,7 @@ homebrew_packages:
   - { name: 'groovy', state: 'present', install_options: '' }
   - { name: 'jenv', state: 'present', install_options: '' }  # Command line Java manager.
   - { name: 'jq', state: 'present', install_options: '' }  # command-line JSON processor
+  - { name: 'jmeter', state: 'present', install_options: '' }
   - { name: 'kafka', state: 'absent', install_options: '' }  # Apache Kafka
   - { name: 'kotlin', state: 'present', install_options: '' }  # jvm language
   - { name: 'lua', state: 'present',  install_options: '' }  # lua language
@@ -37,7 +38,7 @@ homebrew_packages:
   - { name: 'scala', state: 'present', install_options: '' }
   - { name: 'ssh-copy-id', state: 'present', install_options: '' }
   - { name: 'swift', state: 'present', install_options: '' }
-  - { name: 'terraform', state: 'absent', install_options: '' }
+  - { name: 'terraform', state: 'present', install_options: '' }
   - { name: 'tree', state: 'present', install_options: '' }  # List a directory with tree command.
   - { name: 'watch', state: 'present', install_options: '' }
   - { name: 'wget', state: 'present', install_options: '' }
