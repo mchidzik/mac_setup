@@ -18,11 +18,12 @@ homebrew_packages:
   - { name: 'git', state: 'present', install_options: '' }
   - { name: 'go', state: 'present', install_options: '' }
   - { name: 'gnu-tar', state: 'present', install_options: '' }
-  - { name: 'gradle', state: 'absent', install_options: '' }
+  - { name: 'gradle', state: 'present', install_options: '' }
   - { name: 'graphviz', state: 'present', install_options: '' }
   - { name: 'groovy', state: 'present', install_options: '' }
   - { name: 'jenv', state: 'present', install_options: '' }  # Command line Java manager.
   - { name: 'jq', state: 'present', install_options: '' }  # command-line JSON processor
+  - { name: 'jfrog-cli-go', state: 'present', install_options: '' }  # command-line jfrog artifactory cli
   - { name: 'jmeter', state: 'present', install_options: '' }
   - { name: 'kafka', state: 'absent', install_options: '' }  # Apache Kafka
   - { name: 'kotlin', state: 'present', install_options: '' }  # jvm language
