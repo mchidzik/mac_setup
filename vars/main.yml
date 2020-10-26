@@ -2,6 +2,7 @@
 homebrew_packages:
   - { name: 'android-sdk', state: 'absent', install_options: '' }
   - { name: 'awscli', state: 'present', install_options: '' }  # Amazon CLI
+  - { name: 'aws-shell', state: 'present', install_options: '' }  # Amazon CLI
   - { name: 'brew-pip', state: 'absent', install_options: '' }  # https://github.com/hanxue/brew-pip
   
   # cloud foundry packages 
@@ -14,6 +15,7 @@ homebrew_packages:
   # 
   - { name: 'ghc', state: 'present', install_options: '' }  # Haskell compiler
   - { name: 'cocoapods', state: 'absent', install_options: '' }  # Dependency manager for Swift and Objective-C
+  - { name: 'consul', state: 'present', install_options: '' }  # Hashicorp Consul
   - { name: 'docker-compose', state: 'absent', install_options: '' }
   - { name: 'git', state: 'present', install_options: '' }
   - { name: 'go', state: 'present', install_options: '' }
@@ -30,17 +32,22 @@ homebrew_packages:
   - { name: 'lua', state: 'present',  install_options: '' }  # lua language
   - { name: 'mariadb', state: 'present', install_options: '' }  # After install, setup: 'mysql_install_db'; start: 'mysql.server start'
   - { name: 'maven', state: 'present', install_options: '' }
+  - { name: 'nomad', state: 'present', install_options: '' }  # Hashicorp Nomad
   - { name: 'node', state: 'present', install_options: '' }  # https://nodejs.org/en/
   - { name: 'openssl', state: 'present', install_options: '' }
   - { name: 'packer', state: 'present', install_options: '' }  # https://www.packer.io/
+  - { name: 'pipenv', state: 'present', install_options: '' }
   - { name: 'protobuf', state: 'absent', install_options: '' }  # Google's data interchange format
   - { name: 'python3', state: 'present', install_options: '' }
   - { name: 'r', state: 'present', install_options: '' }
   - { name: 'scala', state: 'present', install_options: '' }
+  - { name: 'sbt', state: 'present', install_options: '' }
   - { name: 'ssh-copy-id', state: 'present', install_options: '' }
   - { name: 'swift', state: 'present', install_options: '' }
   - { name: 'terraform', state: 'present', install_options: '' }
   - { name: 'tree', state: 'present', install_options: '' }  # List a directory with tree command.
+  - { name: 'vault-cli', state: 'absent', install_options: '' }
+  - { name: 'vault', state: 'present', install_options: '' }
   - { name: 'watch', state: 'present', install_options: '' }
   - { name: 'wget', state: 'present', install_options: '' }
   - { name: 'xmlstarlet', state: 'present', install_options: '' }
@@ -56,8 +63,7 @@ homebrew_packages:
 homebrew_taps:
   - { name: 'homebrew/cask-versions', state: 'present' }     
   - { name: 'cloudfoundry/tap', state: 'present' }
-  - { name: 'homebrew/homebrew-php', state: 'present' }
-  - { name: 'homebrew/science', state: 'present' }   # for R language
+  - { name: 'mongodb/brew', state: 'present' }
   - { name: 'pivotal/tap', state: 'present' }   # for R language
   # See https://github.com/caskroom/homebrew-versions for available homebrew-versions Casks
 
@@ -66,24 +72,28 @@ homebrew_casks:
   - { name: 'brackets', state: 'present' }   # Open source text editor, http://brackets.io/
   - { name: 'dash', state: 'present' }
   - { name: 'dropbox', state: 'present' }
-  - { name: 'eclipse-java', state: 'present' }
+  - { name: 'eclipse-ide', state: 'present' }
+  #- { name: 'eclipse-java', state: 'absent' }
   - { name: 'firefox', state: 'present' }
+  - { name: 'fly', state: 'present' }
   - { name: 'github', state: 'absent' }  # github desktop
   - { name: 'google-chrome', state: 'present' }
   - { name: 'intellij-idea-ce', state: 'absent' }
   - { name: 'iterm2', state: 'present' }
-  - { name: 'java', state: 'present' }
+  #- { name: 'java', state: 'present' }
   #- { name: 'java6', state: 'present' }
   #- { name: 'java9', state: 'absent' }
   - { name: 'kindle', state: 'present' }
   - { name: 'kitematic', state: 'present' }  # Used with docker
   - { name: 'minikube', state: 'present' }  # Tool that makes it easy to run Kubernetes locally
   - { name: 'rstudio', state: 'present' }  # GUI for R language
-  - { name: 'slack', state: 'present' }
-  - { name: 'skitch', state: 'present' }
+  - { name: 'robo-3t', state: 'present' }  # For mongoDB
   - { name: 'screenhero', state: 'present' }
   - { name: 'screenflow', state: 'absent' }  # screencasting and video editing
   - { name: 'sequel-pro', state: 'absent' }
+  - { name: 'skitch', state: 'present' }
+  - { name: 'slack', state: 'present' }
+  #- { name: 'sts', state: 'present' }  # Spring Test Suite
   - { name: 'sourcetree', state: 'absent' }  # git client
   - { name: 'sublime-text', state: 'present' }
   - { name: 'vagrant', state: 'present' }
