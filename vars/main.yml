@@ -1,110 +1,114 @@
 ---
-homebrew_packages:
-  - { name: 'android-sdk', state: 'absent', install_options: '' }
-  - { name: 'awscli', state: 'present', install_options: '' }  # Amazon CLI
-  - { name: 'aws-shell', state: 'present', install_options: '' }  # Amazon CLI
-  - { name: 'brew-pip', state: 'absent', install_options: '' }  # https://github.com/hanxue/brew-pip
-  
-  # cloud foundry packages 
-  - { name: 'cf-cli', state: 'present', install_options: '' }
-  - { name: 'bosh-init', state: 'absent', install_options: ''  }
-  - { name: 'bosh-cli', state: 'absent', install_options: '' }
-  - { name: 'credhub-cli', state: 'absent', install_options: '' }
-  - { name: 'bbl', state: 'absent', install_options: '' }
-
-  # 
-  - { name: 'ghc', state: 'present', install_options: '' }  # Haskell compiler
-  - { name: 'cocoapods', state: 'absent', install_options: '' }  # Dependency manager for Swift and Objective-C
-  - { name: 'consul', state: 'present', install_options: '' }  # Hashicorp Consul
-  - { name: 'docker-compose', state: 'absent', install_options: '' }
-  - { name: 'git', state: 'present', install_options: '' }
-  - { name: 'go', state: 'present', install_options: '' }
-  - { name: 'gnu-tar', state: 'present', install_options: '' }
-  - { name: 'gradle', state: 'present', install_options: '' }
-  - { name: 'graphviz', state: 'present', install_options: '' }
-  - { name: 'groovy', state: 'present', install_options: '' }
-  - { name: 'jenv', state: 'present', install_options: '' }  # Command line Java manager.
-  - { name: 'jq', state: 'present', install_options: '' }  # command-line JSON processor
-  - { name: 'jfrog-cli-go', state: 'present', install_options: '' }  # command-line jfrog artifactory cli
-  - { name: 'jmeter', state: 'present', install_options: '' }
-  - { name: 'kafka', state: 'absent', install_options: '' }  # Apache Kafka
-  - { name: 'kotlin', state: 'present', install_options: '' }  # jvm language
-  - { name: 'lua', state: 'present',  install_options: '' }  # lua language
-  - { name: 'mariadb', state: 'present', install_options: '' }  # After install, setup: 'mysql_install_db'; start: 'mysql.server start'
-  - { name: 'maven', state: 'present', install_options: '' }
-  - { name: 'nomad', state: 'present', install_options: '' }  # Hashicorp Nomad
-  - { name: 'node', state: 'present', install_options: '' }  # https://nodejs.org/en/
-  - { name: 'openssl', state: 'present', install_options: '' }
-  - { name: 'packer', state: 'present', install_options: '' }  # https://www.packer.io/
-  - { name: 'pipenv', state: 'present', install_options: '' }
-  - { name: 'protobuf', state: 'absent', install_options: '' }  # Google's data interchange format
-  - { name: 'python3', state: 'present', install_options: '' }
-  - { name: 'r', state: 'present', install_options: '' }
-  - { name: 'scala', state: 'present', install_options: '' }
-  - { name: 'sbt', state: 'present', install_options: '' }
-  - { name: 'ssh-copy-id', state: 'present', install_options: '' }
-  - { name: 'swift', state: 'present', install_options: '' }
-  - { name: 'terraform', state: 'present', install_options: '' }
-  - { name: 'tree', state: 'present', install_options: '' }  # List a directory with tree command.
-  - { name: 'vault-cli', state: 'absent', install_options: '' }
-  - { name: 'vault', state: 'present', install_options: '' }
-  - { name: 'watch', state: 'present', install_options: '' }
-  - { name: 'wget', state: 'present', install_options: '' }
-  - { name: 'xmlstarlet', state: 'present', install_options: '' }
-  - { name: 'yarn', state: 'present', install_options: ' --without-node' }
-  - { name: 'yq', state: 'present', install_options: '' }  # command-line YAML processor
-  - { name: 'yeti', state: 'absent', install_options: '' }  # Functional language for the JVM
-
-  #
-  - { name: 'bash-completion', state: 'present', install_options: '' } 
-  - { name: 'kubectl', state: 'present', install_options: '' }  # kubernetes
-  - { name: 'openshift-cli', state: 'present', install_options: '' }  # for use with kubernetes
-
 homebrew_taps:
   - { name: 'homebrew/cask-versions', state: 'present' }     
   - { name: 'cloudfoundry/tap', state: 'present' }
   - { name: 'mongodb/brew', state: 'present' }
   - { name: 'pivotal/tap', state: 'present' }   # for R language
-  # See https://github.com/caskroom/homebrew-versions for available homebrew-versions Casks
 
+
+homebrew_packages:
+  - { name: 'android-sdk', state: 'absent' }
+  - { name: 'awscli', state: 'present' }  # Amazon CLI
+  - { name: 'aws-shell', state: 'present' }  # Amazon CLI
+  - { name: 'brew-pip', state: 'absent' }  # https://github.com/hanxue/brew-pip
+  
+  # cloud foundry packages 
+  - { name: 'bosh-init', state: 'absent'  }
+  - { name: 'bosh-cli', state: 'absent' }
+  - { name: 'cf-cli', state: 'present' }
+  - { name: 'credhub-cli', state: 'absent' }
+  - { name: 'bbl', state: 'absent' }
+
+  # 
+  - { name: 'ghc', state: 'present' }  # Haskell compiler
+  - { name: 'cocoapods', state: 'absent' }  # Dependency manager for Swift and Objective-C
+  - { name: 'consul', state: 'present' }  # Hashicorp Consul
+  - { name: 'docker-compose', state: 'absent' }
+  - { name: 'git', state: 'present' }
+  - { name: 'go', state: 'present' }
+  - { name: 'gnu-tar', state: 'present' }
+  - { name: 'gradle', state: 'present' }
+  - { name: 'graphviz', state: 'present' }
+  - { name: 'groovy', state: 'present' }
+  - { name: 'jenv', state: 'present' }  # Command line Java manager.
+  - { name: 'jq', state: 'present' }  # command-line JSON processor
+  - { name: 'jfrog-cli-go', state: 'present' }  # command-line jfrog artifactory cli
+  - { name: 'jmeter', state: 'present' }
+  - { name: 'kafka', state: 'absent' }  # Apache Kafka
+  - { name: 'kotlin', state: 'present' }  # jvm language
+  - { name: 'lua', state: 'present' }  # lua language
+  - { name: 'mariadb', state: 'present' }  # After install, setup: 'mysql_install_db'; start: 'mysql.server start'
+  - { name: 'maven', state: 'present' }
+  - { name: 'nomad', state: 'present' }  # Hashicorp Nomad
+  - { name: 'node', state: 'present' }  # https://nodejs.org/en/
+  - { name: 'openssl', state: 'present' }
+  - { name: 'packer', state: 'present' }  # https://www.packer.io/
+  - { name: 'pipenv', state: 'present' }
+  - { name: 'protobuf', state: 'absent' }  # Google's data interchange format
+  - { name: 'python3', state: 'present' }
+  - { name: 'r', state: 'present' }
+  - { name: 'scala', state: 'present' }
+  - { name: 'sbt', state: 'present' }
+  - { name: 'ssh-copy-id', state: 'present' }
+  - { name: 'swift', state: 'present' }
+  - { name: 'terraform', state: 'present' }
+  - { name: 'tree', state: 'present' }  # List a directory with tree command.
+  - { name: 'vault-cli', state: 'absent' }
+  - { name: 'vault', state: 'present' }
+  - { name: 'watch', state: 'present' }
+  - { name: 'wget', state: 'present' }
+  - { name: 'xmlstarlet', state: 'present' }
+  - { name: 'yarn', state: 'absent' }
+  - { name: 'yq', state: 'present' }  # command-line YAML processor
+  - { name: 'yeti', state: 'absent' }  # Functional language for the JVM
+
+  #
+  - { name: 'bash-completion', state: 'present' } 
+  - { name: 'kubectl', state: 'present' }  # kubernetes
+  - { name: 'openshift-cli', state: 'present' }  # for use with kubernetes
+
+
+# See https://github.com/caskroom/homebrew-versions for available homebrew-versions Casks
 homebrew_casks:
   - { name: 'atom', state: 'present' }
   - { name: 'brackets', state: 'present' }   # Open source text editor, http://brackets.io/
   - { name: 'dash', state: 'present' }
   - { name: 'dropbox', state: 'present' }
-  - { name: 'eclipse-ide', state: 'present' }
+  #- { name: 'eclipse-ide', state: 'present' }
   #- { name: 'eclipse-java', state: 'absent' }
   - { name: 'firefox', state: 'present' }
   - { name: 'fly', state: 'present' }
   - { name: 'github', state: 'absent' }  # github desktop
-  - { name: 'google-chrome', state: 'present' }
-  - { name: 'intellij-idea-ce', state: 'absent' }
+  #- { name: 'google-chrome', state: 'present' }
+  #- { name: 'intellij-idea-ce', state: 'absent' }
   - { name: 'iterm2', state: 'present' }
   #- { name: 'java', state: 'present' }
   #- { name: 'java6', state: 'present' }
   #- { name: 'java9', state: 'absent' }
   - { name: 'kindle', state: 'present' }
   - { name: 'kitematic', state: 'present' }  # Used with docker
-  - { name: 'minikube', state: 'present' }  # Tool that makes it easy to run Kubernetes locally
+  #- { name: 'minikube', state: 'present' }  # Tool that makes it easy to run Kubernetes locally
   - { name: 'rstudio', state: 'present' }  # GUI for R language
-  - { name: 'robo-3t', state: 'present' }  # For mongoDB
-  - { name: 'screenhero', state: 'present' }
+  #- { name: 'robo-3t', state: 'present' }  # For mongoDB
+  #- { name: 'screenhero', state: 'present' }
   - { name: 'screenflow', state: 'absent' }  # screencasting and video editing
-  - { name: 'sequel-pro', state: 'absent' }
+  #- { name: 'sequel-pro', state: 'absent' }
   - { name: 'skitch', state: 'present' }
   - { name: 'slack', state: 'present' }
   #- { name: 'sts', state: 'present' }  # Spring Test Suite
   - { name: 'sourcetree', state: 'absent' }  # git client
-  - { name: 'sublime-text', state: 'present' }
+  #- { name: 'sublime-text', state: 'absent' }
   - { name: 'vagrant', state: 'present' }
   - { name: 'virtualbox', state: 'present' }
-  - { name: 'visual-studio-code', state: 'present' }
-  - { name: 'xquartz', state: 'present' }
+  # - { name: 'visual-studio-code', state: 'present' } run manually: "brew cask install visual-studio-code"
+  - { name: 'xquartz', state: 'absent' }
+
 
 homebrew_ruby_gems:
   - { name: 'kitchen-vagrant', version: '1.0.2', state: 'absent' }
   - { name: 'test-kitchen', version: '1.12.0', state: 'absent' }
   # Note: local gems are not included in the PATH, make sure to set it up
+
 
 homebrew_python_packages:
   - { name: 'virtualenv', state: 'present' }
